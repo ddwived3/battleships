@@ -16,24 +16,24 @@ namespace Battleships.Test
         [Fact]
         public void TestPlay_HitAll_Sunk4CellShip()
         {
-            var ships = new[] { "3:1,6:1" };
-            var guesses = new[] { "3:1", "4:1", "5:1", "6:1" };
+            var ships = new[] { "5:1,8:1" };
+            var guesses = new[] { "5:1", "6:1", "7:1", "8:1" };
             Game.Play(ships, guesses).Should().Be(1);
         }
 
         [Fact]
         public void TestPlay_HitAll_Sunk2CellShips()
         {
-            var ships = new[] { "1:1,2:1", "3:2,3:3" };
-            var guesses = new[] { "1:1", "2:1", "3:2", "3:3" };
+            var ships = new[] { "0:1,1:1", "6:4,6:5" };
+            var guesses = new[] { "0:1", "1:1", "6:4", "6:5" };
             Game.Play(ships, guesses).Should().Be(2);
         }
 
         [Fact]
         public void TestPlay_HitAll_SinkShipCount()
         {
-            var ships = new[] { "3:2,3:5" };
-            var guesses = new[] { "3:2", "3:3", "3:4" };
+            var ships = new[] { "9:3,9:6" };
+            var guesses = new[] { "9:3", "9:4", "9:5" };
             Game.Play(ships, guesses).Should().Be(0);
         }
     }
